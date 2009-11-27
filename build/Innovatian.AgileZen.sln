@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovatian.AgileZen.Driver", "..\source\Innovatian.AgileZen.Driver\Innovatian.AgileZen.Driver.csproj", "{6B1DDD01-8A2D-48D3-BD3D-AD298960DA4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Innovatian.AgileZen", "..\source\Innovatian.AgileZen\Innovatian.AgileZen.csproj", "{26AD9392-F744-4F52-A78F-7262E659FDFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B1DDD01-8A2D-48D3-BD3D-AD298960DA4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B1DDD01-8A2D-48D3-BD3D-AD298960DA4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B1DDD01-8A2D-48D3-BD3D-AD298960DA4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B1DDD01-8A2D-48D3-BD3D-AD298960DA4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26AD9392-F744-4F52-A78F-7262E659FDFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26AD9392-F744-4F52-A78F-7262E659FDFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26AD9392-F744-4F52-A78F-7262E659FDFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26AD9392-F744-4F52-A78F-7262E659FDFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
