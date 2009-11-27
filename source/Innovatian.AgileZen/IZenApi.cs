@@ -19,7 +19,7 @@ using System.ServiceModel.Web;
 
 namespace Innovatian.AgileZen
 {
-    [ServiceContract]
+    [ServiceContract(Namespace = "http://innovatian.com/AgileZen")]
     [XmlSerializerFormat]
     public interface IZenApi
     {
@@ -59,7 +59,7 @@ namespace Innovatian.AgileZen
             UriTemplate = "/project/{projectId}/stories")]
         StoryCollection GetStories(string projectId);
 
-        [OperationContract(Name = "story")]
+        [OperationContract(Name = "getStory")]
         [WebGet(
             BodyStyle = WebMessageBodyStyle.Bare,
             ResponseFormat = WebMessageFormat.Xml,

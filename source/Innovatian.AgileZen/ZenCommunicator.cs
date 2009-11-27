@@ -13,6 +13,7 @@
 #region Using Directives
 
 using System.ServiceModel;
+using System.ServiceModel.Description;
 
 #endregion
 
@@ -23,10 +24,24 @@ namespace Innovatian.AgileZen
         private readonly ChannelFactory<IZenApi> _channelFactory;
 
         public ZenCommunicator(string apiKey)
+            :this(apiKey, false)
         {
-            var end = new EndpointAddress("http://agilezen.com/api/v1");
-            _channelFactory = new ChannelFactory<IZenApi>("AgileZenREST", end);
-            _channelFactory.Endpoint.Behaviors.Add(new ZenEndpointBehavior(apiKey));
+        }
+
+        public ZenCommunicator(string apiKey, bool ssl)
+        {
+            ContractDescription constract;
+            using (var channelFactory = new ChannelFactory<IZenApi>())
+            {
+                constract = channelFactory.Endpoint.Contract;
+            }
+            string uri = string.Format("http{0}://agilezen.com/api/v1", ssl ? "s" : string.Empty);
+            var serviceEndpoint = new ServiceEndpoint(constract,
+                                                      new WebHttpBinding(),
+                                                      new EndpointAddress(uri));
+            serviceEndpoint.Behaviors.Add(new WebHttpBehavior());
+            serviceEndpoint.Behaviors.Add(new ZenEndpointBehavior(apiKey));
+            _channelFactory = new ChannelFactory<IZenApi>(serviceEndpoint);
         }
 
         public IZenApi CreateAgileZenChannel()

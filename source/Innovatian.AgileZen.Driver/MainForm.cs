@@ -25,11 +25,13 @@ namespace Innovatian.AgileZen.Driver
         public MainForm()
         {
             InitializeComponent();
-            _communicator = new ZenCommunicator("8dee94ab26324659991250b292db3601");
+            _communicator = new ZenCommunicator("<<YOUR-API-KEY>>");
             IZenApi _zenApiChannel = _communicator.CreateAgileZenChannel();
             ProjectCollection projects = _zenApiChannel.GetProjects();
-            Project project = _zenApiChannel.GetProject(projects.Items[0].Id.ToString());
-            StoryCollection stories = _zenApiChannel.GetStories(projects.Items[0].Id.ToString());
+            Project firstProject = projects.Items[0];
+            string projectId = firstProject.Id.ToString();
+            Project project = _zenApiChannel.GetProject(projectId);
+            StoryCollection stories = _zenApiChannel.GetStories(projectId);
         }
     }
 }
